@@ -1,0 +1,13 @@
+[Unit]
+Description=Prompt for KDE Plasma scale (100%/200%) when the VM window size changes
+PartOf=graphical-session.target
+After=plasma-workspace.target graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/auto-scale-kde.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=plasma-workspace.target
